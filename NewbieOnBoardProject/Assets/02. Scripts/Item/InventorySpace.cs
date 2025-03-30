@@ -14,6 +14,7 @@ namespace Inventory.Space
         public Item ItemData = null;
         public bool IsDrop = false;
         public bool IsEmpty = false;
+        public GameObject _itemTooltipUI;
 
         [SerializeField] private RectTransform _itemRectTrans;
         [SerializeField] private GameObject _itemPrefab;
@@ -114,7 +115,7 @@ namespace Inventory.Space
         /// <param name="isOpen"></param>
         public void ToggleItemTooltip(bool isOpen)
         {
-            UIManager.Instance.ToggleItemTooltipUI(_itemRectTrans.position, ItemData, isOpen);
+            UIManager.Instance.ToggleItemTooltipUI(_itemRectTrans.position, ItemData, isOpen, _itemTooltipUI);
         }
 
         //아이템을 서로 교환하는 함수
