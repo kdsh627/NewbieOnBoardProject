@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 446450942}
   - component: {fileID: 446450941}
   - component: {fileID: 446450943}
+  - component: {fileID: 446450944}
   m_Layer: 0
   m_Name: Exchange Shop
   m_TagString: Untagged
@@ -324,6 +325,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2, y: 2.7}
   m_EdgeRadius: 0
+--- !u!114 &446450944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446450939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64ccf573f3f0df4fa8944f04edfcdce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6315,6 +6328,10 @@ PrefabInstance:
     - target: {fileID: 2462447325279864673, guid: 62f049589be0fd145a83f0f8d9bb3b49, type: 3}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5012524888898522816, guid: 62f049589be0fd145a83f0f8d9bb3b49, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5950473176128093194, guid: 62f049589be0fd145a83f0f8d9bb3b49, type: 3}
       propertyPath: m_LocalPosition.x
