@@ -1,5 +1,5 @@
-using UnityEngine;
 using Manager.UI;
+using UnityEngine;
 
 namespace Player.PlayerController
 {
@@ -34,7 +34,7 @@ namespace Player.PlayerController
         }
 
         private void Move()
-        { 
+        {
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
 

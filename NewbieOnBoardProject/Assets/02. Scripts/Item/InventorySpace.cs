@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Inventory.Space
 {
-    public class InventorySpace : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
+    public class InventorySpace : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
         IDropHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
     {
         public int Index = -1;
@@ -61,7 +61,7 @@ namespace Inventory.Space
         //아이템 드래그
         public void OnDrag(PointerEventData eventData)
         {
-            if(IsEmpty)
+            if (IsEmpty)
             {
                 return;
             }
@@ -145,7 +145,7 @@ namespace Inventory.Space
         //이미지의 알파값을 변경하는 함수
         private void ChangeImageAlpha(byte changeValue)
         {
-            for(int i = 0; i < _images.Length; ++i)
+            for (int i = 0; i < _images.Length; ++i)
             {
                 Color32 color = _images[i].color;
                 color.a = changeValue;
