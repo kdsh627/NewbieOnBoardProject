@@ -20,7 +20,7 @@ namespace Inventory
 
         void OnEnable()
         {
-            InventoryManager.Instance.UpdateMoney(0, _moneyText);
+            InventoryManager.Instance.UpdateMoney(_moneyText);
             for (int i = 0; i < _inventory.Count; i++)
             {
                 _inventory[i].Index = i;

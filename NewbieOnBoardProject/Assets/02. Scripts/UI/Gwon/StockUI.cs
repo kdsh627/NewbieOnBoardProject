@@ -24,7 +24,7 @@ namespace UI.Stock
             int amount = int.Parse(_buyInputField.text);
             int price = amount * StockManager.Instance.Stocks[_index].Price;
 
-            bool isBuy = InventoryManager.Instance.UpdateMoney(-price);
+            bool isBuy = InventoryManager.Instance.UpdateMoney(null, -price);
 
             if (isBuy)
             {
@@ -42,7 +42,7 @@ namespace UI.Stock
             int amount = int.Parse(_sellInputField.text);
             int price = amount * StockManager.Instance.Stocks[_index].Price;
 
-            bool isSell = InventoryManager.Instance.UpdateMoney(price);
+            bool isSell = InventoryManager.Instance.UpdateMoney(null, price);
 
             if (isSell)
             {

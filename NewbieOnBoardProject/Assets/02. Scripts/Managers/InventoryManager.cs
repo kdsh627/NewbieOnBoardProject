@@ -31,7 +31,7 @@ namespace Manager.Inventory
         /// 돈을 업데이트하고 업데이트 가능여부 반환
         /// </summary>
         /// <param name="value"> 업데이트할 값</param>
-        public bool UpdateMoney(int value = 0, TMP_Text moneyText = null)
+        public bool UpdateMoney(TMP_Text moneyText, int value = 0)
         {
             if (_money + value < 0)
             {
