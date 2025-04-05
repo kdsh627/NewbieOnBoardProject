@@ -9,7 +9,7 @@ namespace Stock.JuyeongSangjo
 
         private void Awake()
         {
-            _preDeadAmount = GetRandom(100);
+            _preDeadAmount = 50;
         }
 
         public override void CalculateStockPrice()

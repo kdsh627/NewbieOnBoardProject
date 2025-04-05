@@ -35,12 +35,12 @@ namespace Stock.Donghyeop
 
         private void Awake()
         {
-            _wheat._preCropsAmount = GetRandom(100);
-            _carrot._preCropsAmount = GetRandom(100);
-            _potato._preCropsAmount = GetRandom(100);
-            _pumpkin._preCropsAmount = GetRandom(100);
-            _watermelon._preCropsAmount = GetRandom(100);
-            _sugarCane._preCropsAmount = GetRandom(100);
+            _wheat._preCropsAmount = 50;
+            _carrot._preCropsAmount = 50;
+            _potato._preCropsAmount = 50;
+            _pumpkin._preCropsAmount = 50;
+            _watermelon._preCropsAmount = 50;
+            _sugarCane._preCropsAmount = 50;
         }
 
         public override void CalculateStockPrice()

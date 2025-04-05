@@ -4,6 +4,7 @@ using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 namespace Manager.UI
 {
@@ -18,10 +19,21 @@ namespace Manager.UI
             public TMP_Text _lowPrice;
         }
 
-
+        [Header("---- 주식 종목 관련 UI ----")]
         [SerializeField] private GameObject _stockUI;
         [SerializeField] private List<TMP_Text> _stocksName;
         [SerializeField] private List<PriceField> _stockPriceFields;
+        [SerializeField] private GameObject _stockNewsUI;
+
+        [Header("---- 주식 사고 팔기 실패 시 UI ----")]
+        [SerializeField] private GameObject _warningBuyUI;
+        [SerializeField] private GameObject _warningInventoryUI;
+        [SerializeField] private GameObject _warningSellUI;
+
+        [Header("---- 주식 사고 팔기 성공 시 UI ----")]
+        [SerializeField] private GameObject _successBuyUI;
+        [SerializeField] private GameObject _successSellUI;
+  
 
         public void ToggleStockUI(bool isOpen)
         {
@@ -41,6 +53,51 @@ namespace Manager.UI
             _stockPriceFields[index]._lowPrice.text = "저가 : " + lowPrice;
         }
 
+        public void ShowSuccessBuyUI(string name, int Amount)
+        {
+            _successBuyUI.GetComponent<TMP_Text>().text = string.Format("{0} 주식을 {1}개 구매하였습니다.", name, Amount);
+            _successBuyUI.SetActive(true);
+        }
+        public void ShowSuccessSellUI(string name, int Amount)
+        {
+            _successSellUI.GetComponent<TMP_Text>().text = string.Format("{0} 주식을 {1}개 판매하였습니다.", name, Amount);
+            _successSellUI.SetActive(true);
+        }
 
+        public void ShowWarningBuyUI()
+        {
+            _warningBuyUI.SetActive(true);
+        }
+
+        public void ShowWarningSellUI()
+        {
+            _warningSellUI.SetActive(true);
+        }
+
+        public void ShowWarningInventoryUI(bool isBuy)
+        {
+            if(isBuy)
+            {
+                _warningInventoryUI.GetComponent<TMP_Text>().text = "아이템 칸이 부족합니다.";
+            }
+            else
+            {
+                _warningInventoryUI.GetComponent<TMP_Text>().text = "주식이 부족합니다.";
+            }
+            _warningInventoryUI.SetActive(true);
+        }
+
+        public void ShowStockNewsUI(string name, float changeRate)
+        {
+            if (changeRate >= 0)
+            {
+                _stockNewsUI.GetComponent<TMP_Text>().text = string.Format("{0} 주식이 {1:F1}% 상승하였습니다.", name, changeRate);
+            }
+            else
+            {
+                _stockNewsUI.GetComponent<TMP_Text>().text = string.Format("{0} 주식이 {1:F1}% 하락하였습니다.", name, changeRate);
+            }
+            _stockNewsUI.SetActive(true);
+        }
     }
 }

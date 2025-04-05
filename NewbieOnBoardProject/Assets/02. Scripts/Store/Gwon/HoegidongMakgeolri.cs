@@ -9,7 +9,7 @@ namespace Stock.HoegidongMakgeolri
 
         private void Awake()
         {
-            _preBuildingArea = GetRandom(100);
+            _preBuildingArea = 50;
         }
 
         public override void CalculateStockPrice()

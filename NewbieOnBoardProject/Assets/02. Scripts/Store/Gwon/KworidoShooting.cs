@@ -9,7 +9,7 @@ namespace Stock.KworidoShooting
 
         private void Awake()
         {
-            _preHuntAmount = GetRandom(100);
+            _preHuntAmount = 50;
         }
 
         public override void CalculateStockPrice()

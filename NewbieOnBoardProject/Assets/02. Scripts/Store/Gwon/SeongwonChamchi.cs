@@ -36,11 +36,11 @@ namespace Stock.SeongwonChamchi
 
         private void Awake()
         {
-            _fish._preFishingAmount = GetRandom(100);
-            _salmon._preFishingAmount = GetRandom(100);
-            _blowFish._preFishingAmount = GetRandom(100);
-            _tropicalFish._preFishingAmount = GetRandom(100);
-            _calamari._preFishingAmount = GetRandom(100);
+            _fish._preFishingAmount = 50;
+            _salmon._preFishingAmount = 50;
+            _blowFish._preFishingAmount = 50;
+            _tropicalFish._preFishingAmount = 50;
+            _calamari._preFishingAmount = 50;
         }
 
         public override void CalculateStockPrice()

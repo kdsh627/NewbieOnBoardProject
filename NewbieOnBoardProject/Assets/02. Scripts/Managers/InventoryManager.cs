@@ -69,7 +69,7 @@ namespace Manager.Inventory
                     for (int i = 0; i < _inventorySize; i++)
                     {
                         //리스트 순환하여 처음으로 데이터가 없는 곳에 삽입
-                        if (_itemList[i] == null)
+                        if (_itemList[i].Data == null)
                         {
                             _itemList[i] = data;
                             return true;
@@ -77,6 +77,7 @@ namespace Manager.Inventory
                     }
                     break;
             }
+
             //끝까지 순회할 때까지 데이터 삽입이 없으면 꽉 찬 인벤토리 이므로 false반환
             return false;
         }

@@ -33,10 +33,10 @@ namespace Stock.HoeryunNaRock
 
         private void Awake()
         {
-            _coal._preMiningAmount = GetRandom(100);
-            _steel._preMiningAmount = GetRandom(100);
-            _gold._preMiningAmount = GetRandom(100);
-            _diamond._preMiningAmount = GetRandom(100);
+            _coal._preMiningAmount = 50;
+            _steel._preMiningAmount = 50;
+            _gold._preMiningAmount = 50;
+            _diamond._preMiningAmount = 50;
         }
 
         public override void CalculateStockPrice()

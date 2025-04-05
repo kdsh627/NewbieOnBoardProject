@@ -11,7 +11,7 @@ namespace Stock.GyeongsuSaneopGaebal
 
         private void Awake()
         {
-            _preProduction = GetRandom(100);
+            _preProduction = 50;
         }
 
         public override void CalculateStockPrice()

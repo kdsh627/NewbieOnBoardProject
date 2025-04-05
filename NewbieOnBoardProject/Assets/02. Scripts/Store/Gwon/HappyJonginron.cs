@@ -9,7 +9,7 @@ namespace Stock.HappyJonginron
 
         private void Awake()
         {
-            _preStockDropCompanyCount = GetRandom(100);
+            _preStockDropCompanyCount = 50;
         }
 
         public override void CalculateStockPrice()
