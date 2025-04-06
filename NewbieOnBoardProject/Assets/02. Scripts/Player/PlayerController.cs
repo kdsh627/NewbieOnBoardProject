@@ -22,6 +22,7 @@ namespace Player.PlayerController
         {
             ToggleInventory();
             ToggleExchangeSystem();
+
         }
 
         private void FixedUpdate()
@@ -36,6 +37,7 @@ namespace Player.PlayerController
                 UIManager.Instance.ToggleInventoryUI();
             }
         }
+
 
         private void ToggleExchangeSystem(){
             if (_canExchange && Input.GetKeyDown(KeyCode.F)){
