@@ -9,9 +9,9 @@ namespace Inventory
 {
     public class Inventory : MonoBehaviour
     {
-        [SerializeField] private GameObject _ItemToolTipUI;
-        [SerializeField] private TMP_Text _moneyText;
-        private List<InventorySpace> _inventory = new List<InventorySpace>();
+        [SerializeField] protected GameObject _ItemToolTipUI;
+        [SerializeField] protected TMP_Text _moneyText;
+        protected List<InventorySpace> _inventory = new List<InventorySpace>();
 
         private void Awake()
         {
