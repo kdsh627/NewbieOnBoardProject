@@ -39,8 +39,9 @@ namespace Player.PlayerController
 
         private void ToggleExchangeSystem(){
             if (_canExchange && Input.GetKeyDown(KeyCode.F)){
-
                 _exchangeUIToggled = !_exchangeUIToggled; 
+                UIManager.Instance.ToggleExchangeUI(_exchangeUIToggled);
+  
             }
         }
 
@@ -63,6 +64,7 @@ namespace Player.PlayerController
 
         public void SetExchangeToggle(bool value){
             _exchangeUIToggled = value;
+            UIManager.Instance.ToggleExchangeUI(_exchangeUIToggled);
         }
     }
 }

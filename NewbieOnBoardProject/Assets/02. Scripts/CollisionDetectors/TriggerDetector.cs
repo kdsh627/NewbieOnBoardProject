@@ -12,7 +12,7 @@ public class TriggerDetector : MonoBehaviour
         {
         
             playerController.SetCanExchange(true); 
-            // Debug.Log("Player is near an NPC exchange stand.");
+            //Debug.Log("Player is near an NPC exchange stand.");
         }
     }
 
