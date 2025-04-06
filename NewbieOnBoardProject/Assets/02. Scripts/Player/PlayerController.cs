@@ -1,13 +1,19 @@
 using UnityEngine;
 using Manager.UI;
+using Manager.Inventory;
 
 namespace Player.PlayerController
 {
-    public class PlayerController : MonoBehaviour
+    public partial class PlayerController : MonoBehaviour
     {
+        
+        
+
+        [SerializeField] private GameObject _inventoryUI;
         [SerializeField] private float _speed;
         [SerializeField] private Rigidbody2D _rigidbody;
         [SerializeField] private Animator _animator;
+        
 
         private void Awake()
         {
@@ -18,6 +24,7 @@ namespace Player.PlayerController
         void Update()
         {
             ToggleInventory();
+            ContactAuctionNpc();
         }
 
         private void FixedUpdate()
@@ -34,7 +41,7 @@ namespace Player.PlayerController
         }
 
         private void Move()
-        { 
+        {
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
 
