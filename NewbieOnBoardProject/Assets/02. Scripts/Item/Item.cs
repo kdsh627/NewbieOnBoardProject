@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 
 [Serializable]
-public class Item
+public partial class Item
 {
 
     public string SellerName;

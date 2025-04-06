@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Inventory.Space
 {
-    public class InventorySpace : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
+    public partial class InventorySpace : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
         IDropHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
     {
         public static InventorySpace Instance { get; private set; }

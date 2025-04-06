@@ -116,8 +116,7 @@ namespace Bidding.UI
                         break;
                     }
                 }
-                //TODO: 이미 이 아이템을 구매한 전적이 있다면, 추가 제시한 금액에서 이전 금액만큼 뺀 가격만 가져가기
-               
+                
                 gameObject.SetActive(false);
             }
             else
