@@ -795,11 +795,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2, y: 2.7}
   m_EdgeRadius: 0
---- !u!1 &730256935 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6743729889471854896, guid: 647114eddea8af64e9c17d119a4a0d43, type: 3}
-  m_PrefabInstance: {fileID: 3516221955319094391}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &749674855
 GameObject:
   m_ObjectHideFlags: 0
@@ -6100,7 +6095,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventoryUI: {fileID: 1005092687}
-  _itemTooltipUI: {fileID: 730256935}
 --- !u!1 &2040879514
 GameObject:
   m_ObjectHideFlags: 0
