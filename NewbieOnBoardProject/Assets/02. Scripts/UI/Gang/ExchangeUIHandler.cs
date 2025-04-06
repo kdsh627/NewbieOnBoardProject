@@ -25,7 +25,6 @@ public class ExchangeUIHandler : MonoBehaviour
 
     public void OpenBuyUI()
     {
-        Debug.Log("checking!!!");
         UIManager.Instance.ToggleExchangeUI(false);   
         UIManager.Instance.ToggleBuyItemUI(true);        
         // BuyItemUIManager.Instance.PopulateBuyItems();     // Populate the UI

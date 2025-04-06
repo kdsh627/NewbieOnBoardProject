@@ -4,16 +4,14 @@ using UnityEngine;
 [Serializable]
 public class OnSaleItem : Item
 {
-    public int Price;             
-    public int Stock;         
+    public int Price;               
     public string SellerName;    
 
-    public OnSaleItem(ItemDataSO data, int amount, int price, int stock, string sellerName)
+    public OnSaleItem(ItemDataSO data, int amount, int price, string sellerName)
     {
         this.Data = data;
         this.Amount = amount;
         this.Price = price;
-        this.Stock = stock;
         this.SellerName = sellerName;
     }
 }

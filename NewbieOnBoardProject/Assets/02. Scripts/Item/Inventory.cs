@@ -11,7 +11,7 @@ namespace Inventory
     {
         [SerializeField] protected GameObject _ItemToolTipUI;
         [SerializeField] protected TMP_Text _moneyText;
-        protected List<InventorySpace> _inventory = new List<InventorySpace>();
+        private List<InventorySpace> _inventory = new List<InventorySpace>();
 
         private void Awake()
         {
