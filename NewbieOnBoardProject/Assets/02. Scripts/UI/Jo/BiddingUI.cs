@@ -82,37 +82,46 @@ namespace Bidding.UI
         {
             
             int.TryParse(_bidInput.text, out _bidPrice);
-            if (_biddingItem.StartBid < _bidPrice)
-            {
-                _biddingItem.StartBid = _bidPrice;
-            }
-            else
-            {
-                _noticeText.text = "입찰가는 기존 가격보다 높아야 합니다.";
-            }
-            
+
         }
 
 
         public void EnterBid()
         {
-            if(_biddingItem.StartBid < InventoryManager.Instance.Money)
+            if(_biddingItem.StartBid < _bidPrice)
             {
-                AuctionManager.Instance.AuctionItemList[_biddingindex].StartBid = _biddingItem.StartBid;
+                
 
-                for (int i = 0; i > _biddingItem.BuyPlayer.Count; i++)
+                Debug.Log("4");
+                if (_biddingItem.BuyPlayer.Count == 0)
                 {
-                    if (_biddingItem.BuyPlayer[i] == _buyer) //이전에 입찰 했었음
+                    // 첫 입찰
+                    _biddingItem.BuyPlayer.Add(_buyer);
+                    _biddingItem.BuyPrice.Add(_bidPrice);
+                    AuctionManager.Instance.AuctionItemList[_biddingindex].StartBid = _bidPrice;
+                    InventoryManager.Instance.UpdateMoney(_moneyText, -_bidPrice);
+                }
+                for (int i = 0; i < _biddingItem.BuyPlayer.Count; i++)
+                {
+                    Debug.Log("3");
+                    if (_biddingItem.BuyPlayer[i] == null) //첫구매
                     {
-                        InventoryManager.Instance.UpdateMoney(_moneyText, -(_biddingItem.StartBid - _biddingItem.BuyPrice[i]));
-                        _biddingItem.BuyPrice[i] = _biddingItem.StartBid;
+                        Debug.Log("2");
+                        
+                        _biddingItem.BuyPlayer[_biddingItem.BuyPrice.Count + 1] = _buyer;
+                        _biddingItem.BuyPrice[_biddingItem.BuyPrice.Count + 1] = _biddingItem.StartBid;
+                        AuctionManager.Instance.AuctionItemList[_biddingindex].StartBid = _biddingItem.StartBid;
+                        InventoryManager.Instance.UpdateMoney(_moneyText, -(_biddingItem.StartBid));
                         break;
                     }
-                    else //첫구매
+                    else if(_biddingItem.BuyPlayer[i] == _buyer) //이전에 입찰 했었음
                     {
-                        _biddingItem.BuyPlayer[_biddingItem.BuyPrice.Count+1] = _buyer;
-                        _biddingItem.BuyPrice[_biddingItem.BuyPrice.Count+1] = _biddingItem.StartBid;
-                        InventoryManager.Instance.UpdateMoney(_moneyText, -(_biddingItem.StartBid));
+                        Debug.Log("1");
+                        
+                        _biddingItem.BuyPrice[i] = _biddingItem.StartBid;
+                        AuctionManager.Instance.AuctionItemList[_biddingindex].StartBid = _biddingItem.StartBid;
+                        InventoryManager.Instance.UpdateMoney(_moneyText, -(_biddingItem.StartBid - _biddingItem.BuyPrice[i]));
+
                         break;
                     }
                 }

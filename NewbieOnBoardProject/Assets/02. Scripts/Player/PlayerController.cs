@@ -25,7 +25,7 @@ namespace Player.PlayerController
         {
             ToggleInventory();
             ToggleExchangeSystem();
-            //ContactNpc();
+            ContactNpc();
         }
 
         private void FixedUpdate()
