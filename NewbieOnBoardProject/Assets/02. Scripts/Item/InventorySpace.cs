@@ -17,12 +17,12 @@ namespace Inventory.Space
         public bool IsDrop = false;
         public bool IsEmpty = false;
 
-        [SerializeField] private RectTransform _itemRectTrans;
-        [SerializeField] private GameObject _itemPrefab;
-        [SerializeField] private Image _itemImage;
+        [SerializeField] protected RectTransform _itemRectTrans;
+        [SerializeField] protected GameObject _itemPrefab;
+        [SerializeField] protected Image _itemImage;
 
-        private Image[] _images;
-        private GameObject _dragObject;
+        protected Image[] _images;
+        protected GameObject _dragObject;
 
         public Image ItemImage => _itemImage;
 
@@ -140,5 +140,50 @@ namespace Inventory.Space
                 _images[i].color = color;
             }
         }
+    }
+    public class BuyInventorySpace : InventorySpace
+    {
+
+        new public OnSaleItem ItemData = null;
+        new public void OnDrop(PointerEventData eventData)
+        {
+            Debug.Log("인벤토리 드랍");
+            BuyInventorySpace other = eventData.pointerDrag.GetComponent<BuyInventorySpace>();
+
+            IsDrop = true;
+            other.IsDrop = true;
+
+            SwapItem(ref ItemData, ref other.ItemData);
+            other.SetItem();
+            SetItem();
+
+            other.ToggleItemTooltip(false);
+            ToggleItemTooltip(true);
+        }
+
+        new private void SetItem()
+        {
+            InventoryManager.Instance.AddBuyItem(ItemData, Index, AddType.Fixed);
+
+            if (ItemData.Data == null)
+            {
+                return;
+            }
+
+            _itemRectTrans.gameObject.SetActive(true);
+            _itemImage.sprite = ItemData.Data.image;
+        }
+
+        private void SwapItem(ref OnSaleItem data1, ref OnSaleItem data2)
+        {
+            OnSaleItem tmp = data1;
+            data1 = data2;
+            data2 = tmp;
+        }
+        new public void ToggleItemTooltip(bool isOpen)
+        {
+            UIManager.Instance.ToggleBuyItemTooltipUI(_itemRectTrans.position, ItemData, isOpen, _itemTooltipUI);
+        }
+
     }
 }

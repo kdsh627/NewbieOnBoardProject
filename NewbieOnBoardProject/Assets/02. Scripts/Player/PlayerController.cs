@@ -12,6 +12,9 @@ namespace Player.PlayerController
         [SerializeField] private Animator _animator;
         
 
+        private bool _canExchange = false;  
+        private bool _exchangeUIToggled = false;
+
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
@@ -21,6 +24,7 @@ namespace Player.PlayerController
         void Update()
         {
             ToggleInventory();
+            ToggleExchangeSystem();
             ContactAuctionNpc();
         }
 
@@ -37,6 +41,15 @@ namespace Player.PlayerController
             }
         }
 
+
+        private void ToggleExchangeSystem(){
+            if (_canExchange && Input.GetKeyDown(KeyCode.F)){
+                _exchangeUIToggled = !_exchangeUIToggled; 
+                UIManager.Instance.ToggleExchangeUI(_exchangeUIToggled);
+  
+            }
+        }
+
         private void Move()
         {
             float x = Input.GetAxisRaw("Horizontal");
@@ -50,5 +63,13 @@ namespace Player.PlayerController
             _rigidbody.MovePosition((Vector2)transform.position + (direction * _speed * Time.fixedDeltaTime));
         }
 
+        public void SetCanExchange(bool value){
+            _canExchange = value;
+        }
+
+        public void SetExchangeToggle(bool value){
+            _exchangeUIToggled = value;
+            UIManager.Instance.ToggleExchangeUI(_exchangeUIToggled);
+        }
     }
 }
