@@ -104,8 +104,6 @@ namespace UI.Stock
         {
             RectTransform rect;
 
-            Debug.Log(changeRate * 100);
-
             if (changeRate * 100 >= float.Epsilon)
             {
                 _graphBar.GetComponent<Image>().color = Color.red;

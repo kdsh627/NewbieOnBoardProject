@@ -7,7 +7,6 @@ using System.Collections.Generic;
 [Serializable]
 public partial class Item
 {
-
     public string SellerName;
 
     public ItemDataSO Data;

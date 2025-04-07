@@ -4,8 +4,7 @@ using UnityEngine;
 [Serializable]
 public class OnSaleItem : Item
 {
-    public int Price;               
-    public string SellerName;    
+    public int Price;                
 
     public OnSaleItem(ItemDataSO data, int amount, int price, string sellerName)
     {

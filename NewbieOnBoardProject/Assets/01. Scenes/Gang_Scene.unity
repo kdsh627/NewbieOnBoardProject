@@ -416,6 +416,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc37ffca7ae4c4f4e8ad032d6e7d00e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nearNpc: 0
+  _inventoryUI: {fileID: 0}
   _speed: 5
   _rigidbody: {fileID: 0}
   _animator: {fileID: 0}
@@ -1455,170 +1457,467 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onSaleItemList:
-  - Data: {fileID: 11400000, guid: 69d50b3101cbfe8479c6d977b12b38f5, type: 2}
+  - SellerName: "\uAC15\uB178\uACB8"
+    Data: {fileID: 11400000, guid: 69d50b3101cbfe8479c6d977b12b38f5, type: 2}
     Amount: 16
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 100
-    SellerName: "\uAC15\uB178\uACB8"
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
-  - Data: {fileID: 0}
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
     Price: 0
-    SellerName: 
   _money: 1000
   _itemList:
-  - Data: {fileID: 11400000, guid: 69d50b3101cbfe8479c6d977b12b38f5, type: 2}
+  - SellerName: 
+    Data: {fileID: 11400000, guid: 69d50b3101cbfe8479c6d977b12b38f5, type: 2}
     Amount: 1
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 11400000, guid: 211b0ca597339a64493f1369321460d5, type: 2}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 11400000, guid: 211b0ca597339a64493f1369321460d5, type: 2}
     Amount: 64
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
-  - Data: {fileID: 0}
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
+  - SellerName: 
+    Data: {fileID: 0}
     Amount: 0
+    StartBid: 0
+    BuyNowPrice: 0
+    RemainingTime: 0
+    BuyPlayer: []
+    BuyPrice: 
   _inventorySize: 27
 --- !u!1 &832818255
 GameObject:
@@ -7656,7 +7955,18 @@ MonoBehaviour:
   _buyButton: {fileID: 866310966}
   _uploadButton: {fileID: 328096103}
   _withdrawButton: {fileID: 1378200550}
+  _stockUI: {fileID: 0}
+  _stocksName: []
+  _stockPriceFields: []
+  _stockNewsUI: {fileID: 0}
+  _warningBuyUI: {fileID: 0}
+  _warningInventoryUI: {fileID: 0}
+  _warningSellUI: {fileID: 0}
+  _successBuyUI: {fileID: 0}
+  _successSellUI: {fileID: 0}
+  _auctionUI: {fileID: 0}
   _inventoryUI: {fileID: 1005092687}
+  _itemTooltipUI: {fileID: 0}
 --- !u!1 &2040879514
 GameObject:
   m_ObjectHideFlags: 0

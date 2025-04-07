@@ -55,12 +55,11 @@ namespace Manager.UI
         /// <param name="position"></param>
         public void ToggleItemTooltipUI(Vector3 position, Item item, bool isOpen)
         {
-            if(item.Data == false)
+            if (item.Data == null)
             {
                 Debug.Log("[Info] not found item.Data");
                 return;
             }
-                
 
             if (isOpen)
             {
@@ -69,7 +68,7 @@ namespace Manager.UI
                 TMP_Text name = _itemTooltipText[0];
                 TMP_Text amount = _itemTooltipText[1];
 
-                name.text = item.Data.name;
+                name.text = item.Data.Name;
                 amount.text = "수량 : " + item.Amount;
             }
 
