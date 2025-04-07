@@ -8,11 +8,13 @@ namespace Manager.UI
     {
         public static UIManager Instance { get; private set; }
 
+        [SerializeField] private GameObject _auctionUI;
         [SerializeField] private GameObject _inventoryUI;
         [SerializeField] private GameObject _itemTooltipUI;
 
         private TMP_Text[] _itemTooltipText;
 
+        public GameObject AuctionUI => _auctionUI;
         public GameObject InventoryUI => _inventoryUI;
 
         private void Awake()
@@ -32,7 +34,7 @@ namespace Manager.UI
         public void ToggleInventoryUI()
         {
             bool isOpen = _inventoryUI.activeSelf;
-
+            Debug.Log("토글");
             _inventoryUI.SetActive(!isOpen);
         }
 
@@ -53,7 +55,11 @@ namespace Manager.UI
         /// <param name="position"></param>
         public void ToggleItemTooltipUI(Vector3 position, Item item, bool isOpen)
         {
-            if(item.Data == null) return;
+            if (item.Data == null)
+            {
+                Debug.Log("[Info] not found item.Data");
+                return;
+            }
 
             if (isOpen)
             {
@@ -62,11 +68,28 @@ namespace Manager.UI
                 TMP_Text name = _itemTooltipText[0];
                 TMP_Text amount = _itemTooltipText[1];
 
-                name.text = item.Data.name;
+                name.text = item.Data.Name;
                 amount.text = "수량 : " + item.Amount;
             }
 
             _itemTooltipUI.SetActive(isOpen);
+        }
+
+        /// <summary>
+        /// 경매장 UI 켜고 끄기
+        /// </summary>
+        public void ToggleAuctionUI()
+        {
+            bool isOpen = _auctionUI.activeSelf;
+            _auctionUI.SetActive(!isOpen);
+        }
+
+        /// <summary>
+        /// 경매장 UI 끄기
+        /// </summary>
+        public void DisableAuctionUI()
+        {
+            _auctionUI.SetActive(false);
         }
     }
 
