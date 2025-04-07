@@ -21,7 +21,7 @@ namespace Stock.HappyJonginron
 
             CalculateChangeRate();
 
-           base.CalculateStockPrice();
+            base.CalculateStockPrice();
         }
 
         protected override void CalculateChangeRate()

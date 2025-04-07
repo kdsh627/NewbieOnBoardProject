@@ -9,7 +9,7 @@ namespace Stock.NahyeonTour
 
         private void Awake()
         {
-            _preServerUser = GetRandom(100);
+            _preServerUser = 50;
         }
 
         public override void CalculateStockPrice()

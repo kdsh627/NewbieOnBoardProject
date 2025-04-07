@@ -65,7 +65,7 @@ namespace Stock
             //주가 = 기존 주가 + 기존 주가 * (기본 변동률 + 여행활동 변동률)
             _price = Mathf.Max(_price + (int)(_price * _changeRate), 1);
 
-            if(_priceData.Count < 20)
+            if (_priceData.Count < 20)
             {
                 _priceData.Enqueue(_price);
                 _sortedData.Add(_price);

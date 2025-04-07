@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Manager.UI;
-using NUnit.Framework;
 using Stock;
 using UI.Stock;
 using UnityEngine;
@@ -53,13 +52,13 @@ namespace Manager.Stock
 
         private void UpdateStocks()
         {
-            if(_updateTime >= float.Epsilon)
+            if (_updateTime >= float.Epsilon)
             {
                 _updateTime -= Time.deltaTime;
             }
             else
             {
-                for(int i = 0; i < _stocks.Count; ++i)
+                for (int i = 0; i < _stocks.Count; ++i)
                 {
                     _stocks[i].CalculateStockPrice();
 
@@ -67,11 +66,13 @@ namespace Manager.Stock
                     {
                         changeRateList.Add(_stocks[i].ChangeRate, _stocks[i].Name);
                     }
-                    UIManager.Instance.SetPriceField(i, _stocks[i].Price, _stocks[i].PrePrice, _stocks[i].HighPrice, _stocks[i].LowPrice, _stocks[i].ChangeRate*100);
+
+                    _stockUIs[i].CreateGraphBar(_stocks[i].ChangeRate);
+                    UIManager.Instance.SetPriceField(i, _stocks[i].Price, _stocks[i].PrePrice, _stocks[i].HighPrice, _stocks[i].LowPrice, _stocks[i].ChangeRate * 100);
                 }
 
                 (float changeRate, string name) maxChangeRateInfo = GetMaxChangeRate();
-                UIManager.Instance.ShowStockNewsUI(maxChangeRateInfo.name, maxChangeRateInfo.changeRate*100);
+                UIManager.Instance.ShowStockNewsUI(maxChangeRateInfo.name, maxChangeRateInfo.changeRate * 100);
                 changeRateList.Clear();
                 _updateTime = _maxUpdateTime;
             }

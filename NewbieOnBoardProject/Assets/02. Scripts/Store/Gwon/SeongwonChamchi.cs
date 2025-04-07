@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Stock.SeongwonChamchi
 {
     public class SeongwonChamchi : StockClass

@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Stock.GyeongsuSaneopGaebal
 {
     public class GyeongsuSaneopGaebal : StockClass
@@ -23,7 +21,7 @@ namespace Stock.GyeongsuSaneopGaebal
 
             CalculateChangeRate();
 
-             base.CalculateStockPrice();
+            base.CalculateStockPrice();
         }
 
         protected override void CalculateChangeRate()

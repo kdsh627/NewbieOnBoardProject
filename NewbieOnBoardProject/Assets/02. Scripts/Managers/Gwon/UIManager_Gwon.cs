@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
-using NUnit.Framework;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using DG.Tweening;
 
 namespace Manager.UI
 {
@@ -33,7 +30,7 @@ namespace Manager.UI
         [Header("---- 주식 사고 팔기 성공 시 UI ----")]
         [SerializeField] private GameObject _successBuyUI;
         [SerializeField] private GameObject _successSellUI;
-  
+
 
         public void ToggleStockUI(bool isOpen)
         {
@@ -76,7 +73,7 @@ namespace Manager.UI
 
         public void ShowWarningInventoryUI(bool isBuy)
         {
-            if(isBuy)
+            if (isBuy)
             {
                 _warningInventoryUI.GetComponent<TMP_Text>().text = "아이템 칸이 부족합니다.";
             }
