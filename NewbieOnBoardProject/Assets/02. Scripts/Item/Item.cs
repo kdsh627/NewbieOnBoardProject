@@ -4,7 +4,6 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 
-
 [Serializable]
 public partial class Item
 {

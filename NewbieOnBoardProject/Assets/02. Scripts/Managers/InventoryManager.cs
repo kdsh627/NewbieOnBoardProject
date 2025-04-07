@@ -32,13 +32,20 @@ namespace Manager.Inventory
                 return false;
 
             _money += value;
-            UI.UIManager.Instance.UpdateMoneyUI(_money, moneyText);
+
+            if (moneyText != null)
+            {
+                UI.UIManager.Instance.UpdateMoneyUI(_money, moneyText);
+            }
             return true;
         }
 
         public bool AddItem(Item data, int index, AddType type)
         {
-            if (index == -1) return false;
+            if (index == -1)
+            {
+                return false;
+            }
 
             switch (type)
             {
@@ -48,7 +55,8 @@ namespace Manager.Inventory
                 case AddType.Sorted:
                     for (int i = 0; i < _inventorySize; i++)
                     {
-                        if (_itemList[i] == null)
+                        //리스트 순환하여 처음으로 데이터가 없는 곳에 삽입
+                        if (_itemList[i].Data == null)
                         {
                             _itemList[i] = data;
                             return true;
@@ -56,6 +64,8 @@ namespace Manager.Inventory
                     }
                     break;
             }
+
+            //끝까지 순회할 때까지 데이터 삽입이 없으면 꽉 찬 인벤토리 이므로 false반환
             return false;
         }
 

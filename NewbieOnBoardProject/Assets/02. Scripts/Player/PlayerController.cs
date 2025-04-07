@@ -1,14 +1,11 @@
-using UnityEngine;
 using Manager.UI;
+using UnityEngine;
 using Manager.Inventory;
 
 namespace Player.PlayerController
 {
     public partial class PlayerController : MonoBehaviour
     {
-        
-        
-
         [SerializeField] private GameObject _inventoryUI;
         [SerializeField] private float _speed;
         [SerializeField] private Rigidbody2D _rigidbody;

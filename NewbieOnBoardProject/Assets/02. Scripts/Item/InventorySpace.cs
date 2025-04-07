@@ -61,8 +61,11 @@ namespace Inventory.Space
 
         public void OnDrag(PointerEventData eventData)
         {
-            if (IsEmpty) return;
-
+            if (IsEmpty)
+            {
+                return;
+            }
+            
             if (eventData.button == PointerEventData.InputButton.Left)
             {
                 Vector2 mousePos = Mouse.current.position.ReadValue();
