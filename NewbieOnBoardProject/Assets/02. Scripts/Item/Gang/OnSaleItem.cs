@@ -1,10 +1,9 @@
 using System;
-using UnityEngine;
 
 [Serializable]
 public class OnSaleItem : Item
 {
-    public int Price;                
+    public int Price;
 
     public OnSaleItem(ItemDataSO data, int amount, int price, string sellerName)
     {

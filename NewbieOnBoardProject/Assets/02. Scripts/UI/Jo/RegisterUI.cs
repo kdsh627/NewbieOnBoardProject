@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Inventory.UI;
+using Auction.UI;
 using Inventory.Space;
+using Inventory.UI;
 using Manager.Auction;
 using Manager.Inventory;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Auction.UI;
 
 namespace Register.UI
 {

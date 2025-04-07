@@ -1,5 +1,5 @@
-using TMPro;
 using Manager.UI;
+using TMPro;
 
 namespace Manager.Inventory
 {

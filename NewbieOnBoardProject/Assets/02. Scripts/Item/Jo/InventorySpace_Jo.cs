@@ -1,6 +1,5 @@
-using UnityEngine;
-using UnityEngine.UI;
 using Manager.UI;
+using UnityEngine;
 
 namespace Inventory.Space
 {

@@ -1,13 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Inventory.Space;
 using Manager.Auction;
 using Manager.Inventory;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Auction.UI;
 
 namespace Bidding.UI
 {
@@ -21,7 +16,7 @@ namespace Bidding.UI
         [SerializeField] private TMP_InputField _bidInput;
         [SerializeField] private TMP_InputField _buyerInput;
         [SerializeField] private Button _registerButton;
-        
+
 
         [SerializeField] private Item _biddingItem; //TODO: 인스턴스로 선택된 아이템 넘겨받기
         [SerializeField] private int _biddingindex; //TODO: 인스턴스로 선택된 아이템 넘겨받기
@@ -80,7 +75,7 @@ namespace Bidding.UI
 
         public void Bidding()
         {
-            
+
             int.TryParse(_bidInput.text, out _bidPrice);
 
         }
@@ -88,9 +83,9 @@ namespace Bidding.UI
 
         public void EnterBid()
         {
-            if(_biddingItem.StartBid < _bidPrice)
+            if (_biddingItem.StartBid < _bidPrice)
             {
-                
+
 
                 Debug.Log("4");
                 if (_biddingItem.BuyPlayer.Count == 0)
@@ -107,17 +102,17 @@ namespace Bidding.UI
                     if (_biddingItem.BuyPlayer[i] == null) //첫구매
                     {
                         Debug.Log("2");
-                        
+
                         _biddingItem.BuyPlayer[_biddingItem.BuyPrice.Count + 1] = _buyer;
                         _biddingItem.BuyPrice[_biddingItem.BuyPrice.Count + 1] = _biddingItem.StartBid;
                         AuctionManager.Instance.AuctionItemList[_biddingindex].StartBid = _biddingItem.StartBid;
                         InventoryManager.Instance.UpdateMoney(_moneyText, -(_biddingItem.StartBid));
                         break;
                     }
-                    else if(_biddingItem.BuyPlayer[i] == _buyer) //이전에 입찰 했었음
+                    else if (_biddingItem.BuyPlayer[i] == _buyer) //이전에 입찰 했었음
                     {
                         Debug.Log("1");
-                        
+
                         _biddingItem.BuyPrice[i] = _biddingItem.StartBid;
                         AuctionManager.Instance.AuctionItemList[_biddingindex].StartBid = _biddingItem.StartBid;
                         InventoryManager.Instance.UpdateMoney(_moneyText, -(_biddingItem.StartBid - _biddingItem.BuyPrice[i]));
@@ -125,12 +120,12 @@ namespace Bidding.UI
                         break;
                     }
                 }
-                
+
                 gameObject.SetActive(false);
             }
             else
             {
-                if(InventoryManager.Instance.Money < _bidPrice)
+                if (InventoryManager.Instance.Money < _bidPrice)
                 {
                     _noticeText.text = "입찰할 돈이 부족합니다.";
                 }
@@ -138,10 +133,10 @@ namespace Bidding.UI
                 {
                     _noticeText.text = "입찰가는 기존 가격보다 높아야 합니다.";
                 }
-                
+
             }
         }
-        
+
 
     }
 }

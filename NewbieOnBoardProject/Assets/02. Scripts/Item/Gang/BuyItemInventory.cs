@@ -2,12 +2,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Inventory.Space;
 using Manager.Inventory;
-using TMPro;
-using UnityEngine;
 
-namespace Inventory{
+namespace Inventory
+{
 
-    public class BuyItemInventory: Inventory
+    public class BuyItemInventory : Inventory
     {
         private List<BuyInventorySpace> _buyInventory = new List<BuyInventorySpace>();
 
@@ -15,7 +14,8 @@ namespace Inventory{
         {
             _buyInventory = GetComponentsInChildren<BuyInventorySpace>().ToList();
         }
-        void OnEnable(){
+        void OnEnable()
+        {
             InventoryManager.Instance.UpdateMoney(_moneyText);
             for (int i = 0; i < _buyInventory.Count; i++)
             {

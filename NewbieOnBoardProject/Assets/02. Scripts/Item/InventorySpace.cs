@@ -65,7 +65,7 @@ namespace Inventory.Space
             {
                 return;
             }
-            
+
             if (eventData.button == PointerEventData.InputButton.Left)
             {
                 Vector2 mousePos = Mouse.current.position.ReadValue();

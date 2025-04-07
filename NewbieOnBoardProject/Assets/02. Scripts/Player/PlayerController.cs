@@ -1,6 +1,5 @@
 using Manager.UI;
 using UnityEngine;
-using Manager.Inventory;
 
 namespace Player.PlayerController
 {
@@ -10,9 +9,9 @@ namespace Player.PlayerController
         [SerializeField] private float _speed;
         [SerializeField] private Rigidbody2D _rigidbody;
         [SerializeField] private Animator _animator;
-        
 
-        private bool _canExchange = false;  
+
+        private bool _canExchange = false;
         private bool _exchangeUIToggled = false;
 
         private void Awake()
@@ -42,11 +41,13 @@ namespace Player.PlayerController
         }
 
 
-        private void ToggleExchangeSystem(){
-            if (_canExchange && Input.GetKeyDown(KeyCode.F)){
-                _exchangeUIToggled = !_exchangeUIToggled; 
+        private void ToggleExchangeSystem()
+        {
+            if (_canExchange && Input.GetKeyDown(KeyCode.F))
+            {
+                _exchangeUIToggled = !_exchangeUIToggled;
                 UIManager.Instance.ToggleExchangeUI(_exchangeUIToggled);
-  
+
             }
         }
 
@@ -63,11 +64,13 @@ namespace Player.PlayerController
             _rigidbody.MovePosition((Vector2)transform.position + (direction * _speed * Time.fixedDeltaTime));
         }
 
-        public void SetCanExchange(bool value){
+        public void SetCanExchange(bool value)
+        {
             _canExchange = value;
         }
 
-        public void SetExchangeToggle(bool value){
+        public void SetExchangeToggle(bool value)
+        {
             _exchangeUIToggled = value;
             UIManager.Instance.ToggleExchangeUI(_exchangeUIToggled);
         }

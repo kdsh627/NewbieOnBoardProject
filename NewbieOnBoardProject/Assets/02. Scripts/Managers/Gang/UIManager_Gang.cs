@@ -1,6 +1,6 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 namespace Manager.UI
 {
@@ -19,17 +19,19 @@ namespace Manager.UI
         {
             _exchangeUIPanel.SetActive(isOpen);
         }
-        
+
         public void ToggleBuyItemUI(bool show)
         {
             _buyItemUI.SetActive(show);
         }
 
-        public bool BuyItemUIIsActive(){
+        public bool BuyItemUIIsActive()
+        {
             return _buyItemUI.activeSelf;
         }
 
-        public void ToggleBuyItemTooltipUI(Vector3 position, OnSaleItem item, bool isOpen, GameObject itemTooltipUI){
+        public void ToggleBuyItemTooltipUI(Vector3 position, OnSaleItem item, bool isOpen, GameObject itemTooltipUI)
+        {
             if (item.Data == null) return;
 
             if (isOpen)
@@ -41,11 +43,11 @@ namespace Manager.UI
                 TMP_Text name = _itemTooltipText[0];
                 TMP_Text amount = _itemTooltipText[1];
                 TMP_Text price = _itemTooltipText[2];
-    
+
 
                 name.text = item.Data.name;
                 amount.text = "수량 : " + item.Amount;
-                price.text = "가격 : "+item.Price;
+                price.text = "가격 : " + item.Price;
             }
 
             itemTooltipUI.SetActive(isOpen);

@@ -1,9 +1,4 @@
-using Inventory.Space;
-using Manager.Inventory;
-using NUnit.Framework.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -44,7 +39,7 @@ namespace Manager.Auction
             Debug.Log($"[AuctionManager] 초기화 완료 - 현재 슬롯 수: {_itemList.Count}");
         }
 
-        
+
 
         public bool AddItem(Item data, int index, AddType type)
         {
@@ -88,12 +83,12 @@ namespace Manager.Auction
                 _itemList[index] = null;
         }
 
-        public void SortAuctionItems() 
+        public void SortAuctionItems()
         {
 
             for (int i = 0; i < _itemList.Count; i++)
             {
-                if(AuctionItemList[i].Data == null)
+                if (AuctionItemList[i].Data == null)
                 {
                     Debug.Log("지움");
                     AuctionItemList.RemoveAt(i);
