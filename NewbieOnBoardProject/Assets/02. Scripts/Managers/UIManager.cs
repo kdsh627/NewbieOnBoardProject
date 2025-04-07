@@ -9,13 +9,16 @@ namespace Manager.UI
         public static UIManager Instance { get; private set; }
 
         [SerializeField] private GameObject _inventoryUI;
+        [SerializeField] private GameObject _itemTooltipUI;
 
         private TMP_Text[] _itemTooltipText;
+
         public GameObject InventoryUI => _inventoryUI;
 
         private void Awake()
         {
             Instance = this;
+            _itemTooltipText = _itemTooltipUI.GetComponentsInChildren<TMP_Text>();
         }
 
         private void Start()
@@ -48,15 +51,13 @@ namespace Manager.UI
         /// </summary>
         /// <param name="item"></param>
         /// <param name="position"></param>
-        public void ToggleItemTooltipUI(Vector3 position, Item item, bool isOpen, GameObject itemTooltipUI)
+        public void ToggleItemTooltipUI(Vector3 position, Item item, bool isOpen)
         {
-            if (item.Data == null) return;
+            if(item.Data == null) return;
 
             if (isOpen)
             {
-                _itemTooltipText = itemTooltipUI.GetComponentsInChildren<TMP_Text>();
-
-                itemTooltipUI.transform.position = position + new Vector3(80f, 50f, 0);
+                _itemTooltipUI.transform.position = position + new Vector3(80f, 50f, 0);
 
                 TMP_Text name = _itemTooltipText[0];
                 TMP_Text amount = _itemTooltipText[1];
@@ -65,7 +66,7 @@ namespace Manager.UI
                 amount.text = "수량 : " + item.Amount;
             }
 
-            itemTooltipUI.SetActive(isOpen);
+            _itemTooltipUI.SetActive(isOpen);
         }
     }
 
