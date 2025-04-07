@@ -27,6 +27,11 @@ namespace Manager.Inventory
             Instance = this;
         }
 
+        private void Start()
+        {
+            
+        }
+
         /// <summary>
         /// 돈을 업데이트하고 업데이트 가능여부 반환
         /// </summary>
@@ -84,8 +89,7 @@ namespace Manager.Inventory
         /// <param name="index"></param>
         public void RemoveItem(int index)
         {
-            _itemList[index].Data = null;
-            _itemList[index].Amount = 0;
+            _itemList[index] = null;
         }
 
         /// <summary>
